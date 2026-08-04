@@ -1,0 +1,16 @@
+{
+  "trigger_detected": "explicit_correction",
+  "record_scope": ["turn_1"],
+  "corrected_proposition": "The user's claim was misrepresented.",
+  "protected_invariant_candidate": "The original scope.",
+  "explicit_emotional_self_report": null,
+  "drift_status": "INVALID_ENUM_VALUE",
+  "drift_type": "semantic",
+  "evidence_refs": ["turn_1:user_statement"],
+  "repair_performed": null,
+  "integration_status": "integrated",
+  "emotional_state_status": "not_material",
+  "safety_evidence_status": "none",
+  "timestamp": 1785826800.0,
+  "policy_version": "1.1.0"
+}

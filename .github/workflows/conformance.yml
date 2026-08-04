@@ -18,9 +18,39 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: pip install jsonschema pyyaml
       - name: Compile
         run: python -m compileall reference/python conformance
       - name: Run representative conformance suite
         run: python conformance/test_mpdp_conformance.py
-      - name: Validate JSON schemas
-        run: python -m json.tool standard/schemas/audit-record.schema.json >/dev/null && python -m json.tool standard/schemas/semantic-finding.schema.json >/dev/null && python -m json.tool standard/schemas/conformance-result.schema.json >/dev/null
+      - name: Validate JSON schemas (Draft 2020-12)
+        run: python conformance/validate_schemas.py
+      - name: Verify machine-policy parity
+        run: python conformance/verify_machine_policy.py
+
+  typescript-reference:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ["18", "20"]
+    defaults:
+      run:
+        working-directory: reference/typescript
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: reference/typescript/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm test
+      - name: Lint
+        run: npm run lint
+      - name: Format check
+        run: npm run format:check

@@ -6,19 +6,31 @@ The project follows semantic versioning for adopted standard packages.
 
 ## [Unreleased]
 
+## [1.1.0-repository.1] — repository package
+
+This release corrects packaging and CI defects only. The adopted normative standard remains version 1.1.0 without modification.
+
+### Added
+
+- `conformance/fixtures/invalid-audit-record.json` — invalid fixture for schema rejection tests.
+- `conformance/fixtures/invalid-semantic-finding.json` — invalid fixture for schema rejection tests.
+- `conformance/fixtures/invalid-conformance-result.json` — invalid fixture for schema rejection tests.
+- `conformance/validate_schemas.py` — Draft 2020-12 JSON Schema validation: validates each schema against its metaschema, accepts all valid fixtures, and rejects all invalid fixtures. Requires `jsonschema`.
+- `standard/appendix-a.canonical.yaml` — faithful structured transcription of Appendix A used as the CI comparison source. The PDF remains normative.
+- `conformance/verify_machine_policy.py` — compares `standard/machine-policy.yaml` against `standard/appendix-a.canonical.yaml` for exact parity on all controlled fields; exits nonzero on divergence.
+- TypeScript CI job in `.github/workflows/conformance.yml` (Node 18, 20 matrix): `npm ci`, `npm run build`, `npm test`, `npm run lint`, `npm run format:check`.
+
 ### Fixed
 
-- Restored `standard/machine-policy.yaml` to exact Appendix A parity with the adopted v1.1.0 PDF, including the normative trigger list, `hypothesis_space`, `correction_integration`, and `audit_record` blocks.
-- Removed the unauthorized strong/weak trigger split from the machine-readable policy.
-- Made the conformance runner return a non-zero process exit status when any formal case or the response-gate negative control fails, so GitHub Actions cannot report success on a failing suite.
+- Replaced JSON-syntax-only check in CI with real Draft 2020-12 JSON Schema validation.
+- Replaced static conformance badge with live GitHub Actions workflow status badge.
+- Introduced explicit repository package version (1.1.0-repository.1) to distinguish packaging from the normative standard version.
 
-### Planned
+### Changed
 
-- Formal repository publication package.
-- Normative JSON schemas and test fixtures.
-- Expanded canonical conformance vectors.
-- Privacy and retention profile.
-- Authoritative-record precedence profile.
+- `conformance/README.md` — documents real schema validation, TypeScript CI, machine-policy parity control, and local run commands.
+- `README.md` — updated badges, quick-start commands, and status section.
+- `.github/workflows/conformance.yml` — installs `jsonschema` and `pyyaml`; runs `validate_schemas.py` and `verify_machine_policy.py`; adds TypeScript job.
 
 ## [1.1.0] - 2026-08-04
 
