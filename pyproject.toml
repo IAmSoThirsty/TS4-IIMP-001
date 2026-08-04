@@ -1,10 +1,14 @@
 [project]
 name = "ts4-iimp-001-reference"
-version = "1.1.0"
-description = "Reference implementation and conformance suite for TS4-IIMP-001"
+version = "1.1.0.post1"
+description = "Reference implementation and conformance suite for TS4-IIMP-001 (repository package 1.1.0-repository.1; adopted standard version 1.1.0)"
 requires-python = ">=3.10"
 authors = [{name = "Jeremy Karrick"}]
 license = {text = "Proprietary - see LICENSE.md"}
+dependencies = [
+    "jsonschema>=4.18.0",
+    "pyyaml>=6.0",
+]
 
 [tool.ruff]
 line-length = 100

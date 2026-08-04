@@ -1,0 +1,8 @@
+{
+  "drift_status": "verified",
+  "drift_type": "semantic",
+  "protected_invariant_candidate": "The user's original scope.",
+  "evidence_refs": "not-an-array",
+  "explicit_emotional_self_report": null,
+  "safety_evidence_status": "none"
+}

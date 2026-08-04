@@ -5,7 +5,9 @@
 > **What meaning is the user trying to keep the system from changing?**
 
 [![Standard](https://img.shields.io/badge/status-adopted-1f6feb)](standard/TS4-IIMP-001-v1.1.0.pdf)
-[![Version](https://img.shields.io/badge/version-1.1.0-2ea44f)](CHANGELOG.md)
+[![Standard version](https://img.shields.io/badge/standard-1.1.0-2ea44f)](CHANGELOG.md)
+[![Repository package](https://img.shields.io/badge/repository%20package-1.1.0--repository.1-6e40c9)](CHANGELOG.md)
+[![CI](https://github.com/IAmSoThirsty/TS4-IIMP-001/actions/workflows/conformance.yml/badge.svg?branch=main)](https://github.com/IAmSoThirsty/TS4-IIMP-001/actions/workflows/conformance.yml)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](reference/python/README.md)
 [![TypeScript](https://img.shields.io/badge/typescript-5.5%2B-3178c6)](reference/typescript/README.md)
 [![Conformance](https://img.shields.io/badge/conformance-reference%20suite-purple)](conformance/README.md)
@@ -37,10 +39,22 @@ The standard does not require favorable reinterpretation. It requires symmetric 
 ```bash
 git clone https://github.com/IAmSoThirsty/TS4-IIMP-001.git
 cd TS4-IIMP-001
+pip install jsonschema pyyaml
+
+# Python conformance suite
 python3 conformance/test_mpdp_conformance.py
+
+# JSON Schema validation (Draft 2020-12)
+python3 conformance/validate_schemas.py
+
+# Machine-policy parity check
+python3 conformance/verify_machine_policy.py
+
+# TypeScript reference (Node 18+)
+cd reference/typescript && npm ci && npm run build && npm test && npm run lint && npm run format:check
 ```
 
-The reference implementation uses only the Python standard library and requires Python 3.10 or newer.
+The Python reference implementation requires Python 3.10 or newer and the `jsonschema` and `pyyaml` packages for full validation.
 
 ## The protocol in one view
 
@@ -106,7 +120,11 @@ docs/                    Architecture, threat model, privacy, and adoption guida
 
 ## Status
 
-**Adopted Standard - Version 1.1.0**
+**Adopted Standard — Version 1.1.0**  
+**Repository package — 1.1.0-repository.1**
+
+The standard version (1.1.0) identifies the normative publication, `TS4-IIMP-001-v1.1.0.pdf`.
+The repository package version (1.1.0-repository.1) identifies this repository release, which corrects packaging and CI defects only. It does not revise the normative standard.
 
 Issued under Thirsty's Codex / Thirsty's Standards V4+ for independent implementation, testing, citation, review, and circulation.
 

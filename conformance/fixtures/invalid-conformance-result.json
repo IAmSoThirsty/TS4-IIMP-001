@@ -1,0 +1,10 @@
+{
+  "case_id": "invalid_case",
+  "record_check_performed": "yes",
+  "no_prohibited_default": true,
+  "symmetric_fidelity": true,
+  "integration_verified": true,
+  "audit_completeness": true,
+  "safety_compatibility": true,
+  "passed": true
+}
