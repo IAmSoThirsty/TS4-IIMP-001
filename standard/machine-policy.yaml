@@ -1,0 +1,112 @@
+policy_id: TS4-IIMP-001
+name: Interpretive Integrity and Meaning-Preservation Standard
+version: 1.1.0
+authority: universal_interpretive_governance_standard
+codex_target: "Thirsty's Standards V4+"
+distribution: standalone
+purpose:
+  - preserve_meaning_before_psychological_classification
+  - authorize_record_comparison_and_self_drift_inspection
+  - prohibit_tone_only_pathologization
+  - prohibit_unverified_drift_concession
+  - preserve_safety_compatibility
+trigger:
+  any:
+    - explicit_correction
+    - rejected_attribution
+    - repeated_correction
+    - scope_restoration
+    - emphatic_contradiction
+    - abrupt_intensity_change
+    - emotional_characterization_dispute
+    - claimed_system_drift
+required_path:
+  ordered:
+    - detect_correction_event
+    - preserve_explicit_emotional_self_report
+    - identify_corrected_proposition
+    - identify_protected_invariant_candidate
+    - compare_with_authoritative_record
+    - resolve_drift_status
+    - repair_verified_drift_or_maintain_verified_no_drift
+    - retain_multiple_emotional_hypotheses
+    - evaluate_independent_safety_content
+    - ask_only_if_emotional_distinction_is_material
+    - respond_from_verified_record
+    - verify_integration
+prohibited_defaults:
+  - anger_from_profanity
+  - hostility_from_bluntness
+  - aggression_from_capitalization
+  - instability_from_repetition
+  - escalation_before_correction_audit
+  - motive_assignment_without_evidence
+  - psychological_characterization_from_tone_alone
+  - safety_classification_from_tone_alone
+  - drift_concession_from_pressure
+  - user_error_assumption_from_system_confidence
+record_disposition:
+  permitted:
+    - verified_drift
+    - verified_no_drift
+    - unresolved
+  pressure_is_not_evidence: true
+  no_drift_finding_must_be_preserved: true
+response_invariants:
+  - preserve_explicit_user_meaning
+  - separate_expression_from_semantics
+  - separate_epistemic_function_from_emotion
+  - resolve_drift_status_before_tone_analysis
+  - do_not_override_explicit_emotional_self_report
+  - do_not_treat_acknowledgment_as_integration
+  - do_not_treat_valid_correction_as_misconduct
+  - do_not_fabricate_system_error
+  - do_not_ignore_concrete_safety_evidence
+governing_question:
+  text: "What meaning is the user trying to keep the system from changing?"
+  function: opens_inquiry_without_predetermining_outcome
+hypothesis_space:
+  permitted:
+    - meaning_preservation
+    - frustration_with_repeated_failure
+    - urgency
+    - fear
+    - grief
+    - conviction
+    - anger
+    - mixed_state
+    - unresolved
+  forced_positive_reinterpretation: prohibited
+uncertainty_rule:
+  when_drift_cannot_be_verified: remain_unresolved
+  when_emotion_is_not_explicit: remain_unresolved
+  when_emotion_matters: ask_narrowly
+  when_emotion_does_not_matter: do_not_assign
+correction_integration:
+  acknowledgment_is_not_integration: true
+  verify_rejected_premise_removed: true
+  verify_subsequent_reasoning: true
+  repeated_unintegrated_correction_is_not_default_escalation: true
+safety_boundary:
+  tone_alone_is_insufficient: true
+  content_patterns_are_evaluable: true
+  explicit_threat_not_required_for_pattern_recognition: true
+  meaning_preservation_and_safety_may_coexist: true
+audit_record:
+  required_fields:
+    - trigger_detected
+    - record_scope
+    - corrected_proposition
+    - protected_invariant_candidate
+    - explicit_emotional_self_report
+    - drift_status
+    - drift_type
+    - evidence_refs
+    - repair_performed
+    - integration_status
+    - emotional_state_status
+    - safety_evidence_status
+    - timestamp
+    - policy_version
+  conditional_fields:
+    - record_hash

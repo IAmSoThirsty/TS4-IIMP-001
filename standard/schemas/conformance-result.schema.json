@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/IAmSoThirsty/TS4-IIMP-001/standard/schemas/conformance-result.schema.json",
+  "title": "TS4-IIMP-001 Conformance Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "record_check_performed", "no_prohibited_default", "symmetric_fidelity", "integration_verified", "audit_completeness", "safety_compatibility", "passed"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "record_check_performed": {"type": "boolean"},
+    "no_prohibited_default": {"type": "boolean"},
+    "symmetric_fidelity": {"type": "boolean"},
+    "integration_verified": {"type": "boolean"},
+    "audit_completeness": {"type": "boolean"},
+    "safety_compatibility": {"type": "boolean"},
+    "passed": {"type": "boolean"}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/IAmSoThirsty/TS4-IIMP-001/standard/schemas/semantic-finding.schema.json",
+  "title": "TS4-IIMP-001 Semantic Finding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["drift_status", "drift_type", "protected_invariant_candidate", "evidence_refs", "explicit_emotional_self_report", "safety_evidence_status"],
+  "properties": {
+    "drift_status": {"enum": ["verified", "no_drift", "unresolved"]},
+    "drift_type": {"enum": ["semantic", "epistemic", "continuity", "none", "unresolved"]},
+    "protected_invariant_candidate": {"type": "string"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "explicit_emotional_self_report": {"type": ["string", "null"]},
+    "safety_evidence_status": {"enum": ["none", "present", "unresolved", "evaluated_under_host_policy"]},
+    "emotional_state_status_override": {"enum": ["explicit", "inferred_with_evidence", "unresolved", "not_material", null]}
+  }
+}

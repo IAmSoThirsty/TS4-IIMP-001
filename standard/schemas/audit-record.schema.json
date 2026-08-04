@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/IAmSoThirsty/TS4-IIMP-001/standard/schemas/audit-record.schema.json",
+  "title": "TS4-IIMP-001 Audit Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trigger_detected", "record_scope", "corrected_proposition",
+    "protected_invariant_candidate", "explicit_emotional_self_report",
+    "drift_status", "drift_type", "evidence_refs", "repair_performed",
+    "integration_status", "emotional_state_status", "safety_evidence_status",
+    "timestamp", "policy_version"
+  ],
+  "properties": {
+    "trigger_detected": {"type": "string", "minLength": 1},
+    "record_scope": {"type": "array", "items": {"type": "string"}},
+    "corrected_proposition": {"type": "string"},
+    "protected_invariant_candidate": {"type": "string"},
+    "explicit_emotional_self_report": {"type": ["string", "null"]},
+    "drift_status": {"enum": ["verified", "no_drift", "unresolved"]},
+    "drift_type": {"enum": ["semantic", "epistemic", "continuity", "none", "unresolved"]},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "repair_performed": {"type": ["string", "null"]},
+    "integration_status": {"enum": ["pending", "integrated", "not_applicable"]},
+    "emotional_state_status": {"enum": ["explicit", "inferred_with_evidence", "unresolved", "not_material"]},
+    "safety_evidence_status": {"enum": ["none", "present", "unresolved", "evaluated_under_host_policy"]},
+    "record_hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "timestamp": {"type": "number"},
+    "policy_version": {"type": "string", "const": "1.1.0"}
+  }
+}

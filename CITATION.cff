@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use TS4-IIMP-001, cite the adopted standard and the repository release."
+title: "TS4-IIMP-001: Interpretive Integrity and Meaning-Preservation Standard"
+type: standard
+version: 1.1.0
+date-released: 2026-08-04
+authors:
+  - family-names: Karrick
+    given-names: Jeremy
+    affiliation: "Thirsty's Projects LLC"
+    orcid: ""
+repository-code: "https://github.com/IAmSoThirsty/TS4-IIMP-001"
+url: "https://github.com/IAmSoThirsty/TS4-IIMP-001"
+abstract: >-
+  An evidence-governed interpretive standard requiring AI systems to verify
+  semantic and epistemic drift before unsupported emotional, psychological,
+  behavioral, or safety attribution, while preserving concurrent safety analysis.
+keywords:
+  - artificial intelligence
+  - AI governance
+  - interpretive integrity
+  - semantic drift
+  - conformance
+  - auditability
+license: "proprietary"
