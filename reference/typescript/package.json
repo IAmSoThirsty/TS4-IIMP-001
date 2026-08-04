@@ -11,8 +11,8 @@
     "dev": "tsc --watch",
     "test": "node --test dist/test/mpdp-engine.test.js",
     "pretest": "tsc",
-    "lint": "eslint src test --ext .ts",
-    "lint:fix": "eslint src test --ext .ts --fix",
+    "lint": "eslint src test",
+    "lint:fix": "eslint src test --fix",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\""
   },

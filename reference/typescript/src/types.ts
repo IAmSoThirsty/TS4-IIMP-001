@@ -24,16 +24,10 @@ export type DriftStatus = "verified" | "no_drift" | "unresolved";
 export type DriftType = "semantic" | "epistemic" | "continuity" | "none" | "unresolved";
 
 export type EmotionalStateStatus =
-  | "explicit"
-  | "inferred_with_evidence"
-  | "unresolved"
-  | "not_material";
+  "explicit" | "inferred_with_evidence" | "unresolved" | "not_material";
 
 export type SafetyEvidenceStatus =
-  | "none"
-  | "present"
-  | "unresolved"
-  | "evaluated_under_host_policy";
+  "none" | "present" | "unresolved" | "evaluated_under_host_policy";
 
 export type IntegrationStatus = "pending" | "integrated" | "not_applicable";
 
@@ -97,4 +91,7 @@ export interface ConformanceResult {
 
 /** Required injection point — see module docstring in mpdp-engine.ts.
  *  Signature: (disputedText, recordScope) => SemanticFinding */
-export type SemanticJudge = (disputedText: string, recordScope: readonly string[]) => SemanticFinding;
+export type SemanticJudge = (
+  disputedText: string,
+  recordScope: readonly string[],
+) => SemanticFinding;

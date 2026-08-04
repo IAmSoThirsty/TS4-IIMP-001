@@ -38,11 +38,17 @@ import type { SemanticFinding } from "../src/types.js";
 // Helpers
 // --------------------------------------------------------------------------
 
-function judgeFactory(finding: SemanticFinding): (d: string, r: readonly string[]) => SemanticFinding {
+function judgeFactory(
+  finding: SemanticFinding,
+): (d: string, r: readonly string[]) => SemanticFinding {
   return (_disputedText, _recordScope) => finding;
 }
 
-function makeEngine(finding: SemanticFinding, agentId = "agent_default", ledger?: CorrectionLedger): MPDPEngine {
+function makeEngine(
+  finding: SemanticFinding,
+  agentId = "agent_default",
+  ledger?: CorrectionLedger,
+): MPDPEngine {
   return new MPDPEngine(judgeFactory(finding), agentId, ledger);
 }
 
@@ -59,7 +65,7 @@ function runEngine(
     recordScope?: readonly string[];
     corrected?: string;
   } = {},
-) {
+): ReturnType<MPDPEngine["run"]> {
   return engine.run(trigger, disputed, recordScope, corrected);
 }
 
@@ -416,16 +422,11 @@ describe("responseGate", () => {
   });
 
   it("throws on prohibited term without evidence flag", () => {
-    assert.throws(
-      () => responseGate("The user seems angry.", new Set()),
-      ResponseGateViolation,
-    );
+    assert.throws(() => responseGate("The user seems angry.", new Set()), ResponseGateViolation);
   });
 
   it("passes when evidence flag is present", () => {
-    assert.doesNotThrow(() =>
-      responseGate("The user expressed anger.", new Set(["anger"])),
-    );
+    assert.doesNotThrow(() => responseGate("The user expressed anger.", new Set(["anger"])));
   });
 
   it("PROHIBITED_TERMS is non-empty and includes expected terms", () => {
@@ -458,7 +459,7 @@ describe("Illegal transitions", () => {
     assert.equal(engine.state, "INTEGRATED");
     // Try a second run — engine is INTEGRATED, INTEGRATED -> DRIFT_VERIFIED is illegal
     const finding2: SemanticFinding = { ...finding };
-    const engine2 = new MPDPEngine(judgeFactory(finding2));
+    void new MPDPEngine(judgeFactory(finding2));
     // Manually test that IllegalTransitionError is exported and usable
     assert.throws(() => {
       throw new IllegalTransitionError("INTEGRATED", "DRIFT_VERIFIED");

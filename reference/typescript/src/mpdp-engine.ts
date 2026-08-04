@@ -49,7 +49,12 @@ import type {
 const LEGAL_TRANSITIONS: ReadonlyMap<MPDPState, ReadonlySet<MPDPState>> = new Map([
   [
     "UNASSESSED",
-    new Set<MPDPState>(["DRIFT_VERIFIED", "NO_DRIFT_VERIFIED", "DRIFT_UNRESOLVED", "SAFETY_CONCURRENT"]),
+    new Set<MPDPState>([
+      "DRIFT_VERIFIED",
+      "NO_DRIFT_VERIFIED",
+      "DRIFT_UNRESOLVED",
+      "SAFETY_CONCURRENT",
+    ]),
   ],
   ["DRIFT_VERIFIED", new Set<MPDPState>(["REPAIR_PENDING", "SAFETY_CONCURRENT"])],
   ["REPAIR_PENDING", new Set<MPDPState>(["INTEGRATION_PENDING"])],
@@ -60,10 +65,7 @@ const LEGAL_TRANSITIONS: ReadonlyMap<MPDPState, ReadonlySet<MPDPState>> = new Ma
     // safety evaluation is orthogonal
     new Set<MPDPState>(["NO_DRIFT_VERIFIED", "UNASSESSED", "SAFETY_CONCURRENT"]),
   ],
-  [
-    "DRIFT_UNRESOLVED",
-    new Set<MPDPState>(["UNASSESSED", "DRIFT_UNRESOLVED", "SAFETY_CONCURRENT"]),
-  ],
+  ["DRIFT_UNRESOLVED", new Set<MPDPState>(["UNASSESSED", "DRIFT_UNRESOLVED", "SAFETY_CONCURRENT"])],
   ["INTEGRATED", new Set<MPDPState>(["SAFETY_CONCURRENT"])],
   // safety evaluation is orthogonal — may transition to any state
   [
@@ -233,7 +235,10 @@ export function missingRequiredFields(record: AuditRecord): Array<keyof AuditRec
   for (const f of AUDIT_REQUIRED_FIELDS) {
     const value = record[f];
     const isEmpty =
-      value === null || value === undefined || value === "" || (Array.isArray(value) && value.length === 0);
+      value === null ||
+      value === undefined ||
+      value === "" ||
+      (Array.isArray(value) && value.length === 0);
     if (isEmpty && !isConditionallyEmptyOk(f, record)) {
       missing.push(f);
     }
@@ -266,9 +271,7 @@ export function computeHash(record: AuditRecord): string {
 
 export class IllegalTransitionError extends Error {
   constructor(from: MPDPState, to: MPDPState) {
-    super(
-      `${from} -> ${to} is not a legal transition under §13.1 / §5.1 / §7.1 constraints.`,
-    );
+    super(`${from} -> ${to} is not a legal transition under §13.1 / §5.1 / §7.1 constraints.`);
     this.name = "IllegalTransitionError";
   }
 }
