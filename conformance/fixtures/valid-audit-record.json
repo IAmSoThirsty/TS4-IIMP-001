@@ -1,0 +1,17 @@
+{
+  "trigger_detected": "explicit_correction",
+  "record_scope": ["turn_1", "turn_2"],
+  "corrected_proposition": "The user's claim was narrower than represented.",
+  "protected_invariant_candidate": "The original scope and certainty level.",
+  "explicit_emotional_self_report": null,
+  "drift_status": "verified",
+  "drift_type": "semantic",
+  "evidence_refs": ["turn_1:user_statement"],
+  "repair_performed": "Restored the user's narrower claim.",
+  "integration_status": "integrated",
+  "emotional_state_status": "not_material",
+  "safety_evidence_status": "none",
+  "record_hash": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "timestamp": 1785826800.0,
+  "policy_version": "1.1.0"
+}
