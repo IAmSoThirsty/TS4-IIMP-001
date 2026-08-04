@@ -20,12 +20,10 @@ The reference implementation demonstrates one implementation path. It does not o
 
 ## Change classes
 
-Changes are classified as:
-
-- **Editorial** — wording, formatting, references, or examples that do not alter requirements.
-- **Clarifying** — removes ambiguity without changing an existing obligation.
-- **Additive** — introduces a new requirement, interface, profile, test, or artifact.
-- **Breaking** — weakens, removes, reverses, or incompatibly changes an existing requirement or machine contract.
+- **Editorial** - wording, formatting, references, or examples that do not alter requirements.
+- **Clarifying** - removes ambiguity without changing an existing obligation.
+- **Additive** - introduces a new requirement, interface, profile, test, or artifact.
+- **Breaking** - weakens, removes, reverses, or incompatibly changes an existing requirement or machine contract.
 
 ## Versioning
 
