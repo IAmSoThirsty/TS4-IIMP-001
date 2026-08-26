@@ -24,4 +24,4 @@ keywords:
   - semantic drift
   - conformance
   - auditability
-license: "proprietary"
+license: "Apache-2.0"
