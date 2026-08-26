@@ -2,7 +2,7 @@
   "name": "ts4-iimp-001-reference-typescript",
   "version": "1.1.0",
   "description": "TypeScript reference implementation of TS4-IIMP-001 v1.1.0 — Interpretive Integrity and Meaning-Preservation Standard",
-  "license": "SEE LICENSE IN ../../LICENSE.md",
+  "license": "Apache-2.0",
   "author": "Jeremy Karrick",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
