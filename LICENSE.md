@@ -1,11 +1,11 @@
 # License Notice
 
-Copyright (c) 2026 Jeremy Karrick / Thirsty's Projects LLC. All rights reserved.
+Copyright (c) 2026 Jeremy Karrick / Thirsty's Projects LLC.
 
-No open-source license is granted by this repository at this time.
+TS4-IIMP-001 is licensed under the Apache License, Version 2.0 (Apache-2.0).
 
-Public access, cloning capability, or receipt of these files does not by itself grant permission to reproduce, modify, redistribute, sublicense, sell, certify, or create derivative standards beyond rights provided by applicable law.
+The complete license text is provided in [`LICENSE`](LICENSE).
 
-Evaluation, commentary, citation, and interoperability discussion are welcomed. Contact the repository owner before redistribution, implementation for commercial deployment, or representation of conformance.
+Unless required by applicable law or agreed to in writing, the work is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License, Version 2.0 for the specific language governing permissions and limitations under the License.
 
-A future release may publish separate licenses for the normative standard, reference implementation, conformance suite, documentation, and media. Until then, this notice controls.
+SPDX-License-Identifier: Apache-2.0
