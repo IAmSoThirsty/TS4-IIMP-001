@@ -11,6 +11,7 @@
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](reference/python/README.md)
 [![TypeScript](https://img.shields.io/badge/typescript-5.5%2B-3178c6)](reference/typescript/README.md)
 [![Conformance](https://img.shields.io/badge/conformance-reference%20suite-purple)](conformance/README.md)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 TS4-IIMP-001 is an adopted standard issued under **Thirsty's Codex / Thirsty's Standards V4+**. It defines an evidence-governed interpretive pathway for AI systems before they assign emotion, motive, psychological significance, behavioral significance, or safety significance to forceful, emphatic, repetitive, profane, corrective, or otherwise intense communication.
 
@@ -134,7 +135,7 @@ Citation metadata is provided in [`CITATION.cff`](CITATION.cff).
 
 ## Licensing
 
-No open-source license has yet been granted for this repository. See [`LICENSE.md`](LICENSE.md). Public visibility does not itself grant reuse rights beyond applicable law.
+TS4-IIMP-001 is open source under the **Apache License, Version 2.0**. See [`LICENSE`](LICENSE) for the complete license text and [`LICENSE.md`](LICENSE.md) for the repository notice.
 
 ---
 
